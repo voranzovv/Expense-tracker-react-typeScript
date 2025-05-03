@@ -45,7 +45,12 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
             <tfoot>
                 <tr>
                     <td>Total</td>
-                    <td>{expenses.reduce((acc, expense) => acc + expense.amount, 0)}</td>
+                    <td>
+                        {expenses.reduce((acc, expense) => acc + expense.amount, 0)}
+                         {/* This will calculate the total amount of all expenses
+                         The reduce function takes two arguments: the accumulator (acc) and the current expense (expense).
+                         The accumulator is initialized to 0. */}
+                        </td>
                     <td></td>
                     <td></td>
                 </tr>
