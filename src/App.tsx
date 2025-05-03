@@ -1,6 +1,4 @@
 import { useState } from 'react'
-
-
 import './App.css'
 import ExpenseList from './components/ExpenseList'
 import ExpenseFilter from './components/ExpenseFilter'
