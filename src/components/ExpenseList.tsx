@@ -1,8 +1,10 @@
+// Define the structure of an Expense object using a TypeScript interface.
+// This ensures that every expense has the required properties with the correct types.
 interface Expense {
-    id: number,
-    description: string,
-    amount: number,
-    category: string
+    id: number, // A unique identifier for the expense.
+    description: string, // A brief description of the expense.
+    amount: number, // The monetary value of the expense.
+    category: string // The category to which the expense belongs (e.g., Food, Travel).
 }
 
 interface Props {
@@ -46,6 +48,10 @@ const ExpenseList = ({ expenses, onDelete }: Props) => {
                 <tr>
                     <td>Total</td>
                     <td>
+                        {/* Display the total amount of all expenses */}
+                        {/* The reduce function iterates over each expense and accumulates the total amount. */}
+                        {/* It starts with an initial value of 0 for the accumulator (acc). */}
+                        {/* The current expense's amount is added to the accumulator for each iteration. */}
                         {expenses.reduce((acc, expense) => acc + expense.amount, 0)}
                          {/* This will calculate the total amount of all expenses
                          The reduce function takes two arguments: the accumulator (acc) and the current expense (expense).
