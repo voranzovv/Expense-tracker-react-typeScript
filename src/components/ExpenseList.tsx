@@ -1,15 +1,15 @@
-// Define the structure of an Expense object using a TypeScript interface.
-// This ensures that every expense has the required properties with the correct types.
-interface Expense {
-    id: number, // A unique identifier for the expense.
-    description: string, // A brief description of the expense.
-    amount: number, // The monetary value of the expense.
-    category: string // The category to which the expense belongs (e.g., Food, Travel).
-}
+import Expense from "../ExpenseInterface"
+
+// interface Expense {
+//     id: number, // A unique identifier for the expense.
+//     description: string, // A brief description of the expense.
+//     amount: number, // The monetary value of the expense.
+//     category: string // The category to which the expense belongs (e.g., Food, Travel).
+// }
 
 interface Props {
     expenses: Expense[],
-    onDelete: (id: number) => void
+    onDelete: (id: string) => void
 }
 const ExpenseList = ({ expenses, onDelete }: Props) => {
     if (expenses.length === 0) {

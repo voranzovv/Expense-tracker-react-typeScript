@@ -5,12 +5,14 @@ import ExpenseList from './components/ExpenseList'
 import ExpenseFilter from './components/ExpenseFilter'
 import ExpenseForm from './components/ExpenseForm'
 import Expense from './ExpenseInterface'
+import { v4 as uuidv4 } from 'uuid'
 
 
 
 function App() {
 
-  const [expenses, setExpenses] = useState<Expense[]>([
+  
+   const [expenses, setExpenses] = useState<Expense[]>([
     // { id: 1, description: 'Groceries', amount: 50, category: 'Food' },
     // { id: 2, description: 'Rent', amount: 1000, category: 'Housing' },
     // { id: 3, description: 'Utilities', amount: 200, category: 'Housing' },
@@ -26,7 +28,7 @@ function App() {
   return (
     <>
       <div className="mb-5">
-        <ExpenseForm onSubmit={(expense) => setExpenses([...expenses, { ...expense, id: expenses.length + 1 }])} />
+        <ExpenseForm onSubmit={(expense) => setExpenses([...expenses, { ...expense, id: uuidv4()}])} />
       </div>
       <div className="mb-3">
         <ExpenseFilter onSelectCategory={(category) => { setFilteredCategory(category) }} />
